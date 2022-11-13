@@ -1,32 +1,34 @@
-//tabs
-const tabs = document.querySelectorAll('.tabheader__item'),
-    tabsCurrent = document.querySelectorAll('.current'),
-    tabsParent = document.querySelector('.tabheader');
+window.addEventListener('DOMContentLoaded', () => {
+    //tabs
+    const tabs = document.querySelectorAll('.tabcontent'),
+        tabsContent = document.querySelectorAll('.tab-content'),
+        tabsParent = document.querySelector('.hero-menu_header');
 
-function hideTabCurrent() {
-    tabsCurrent.forEach(item => {
-        item.style.display = 'none';
-    });
-    tabs.forEach(item => {
-        item.classList.remove('tabheader__item_active');
-    })
-}
-
-function showTabCurrent(i = 0) {
-    tabsCurrent[i].style.display = 'block';
-    tabs[i].classList.add('tabheader__item_active');
-}
-hideTabCurrent();
-showTabCurrent();
-
-tabsParent.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target && target.classList.contains('tabheader__item')) {
-        tabs.forEach((item, i) => {
-            if (target == item) {
-                hideTabCurrent();
-                showTabCurrent(i);
-            }
+    function hideTabContent() {
+        tabsContent.forEach(item => {
+            item.style.display = 'none';
         });
+        tabs.forEach(item => {
+            item.classList.remove('current');
+        })
     }
+
+    function showTabContent(i = 0) {
+        tabsContent[i].style.display = 'block';
+        tabs[i].classList.add('current');
+    }
+    hideTabContent();
+    showTabContent();
+
+    tabsParent.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target && target.classList.contains('tabcontent')) {
+            tabs.forEach((item, i) => {
+                if (target == item) {
+                    hideTabContent();
+                    showTabContent(i);
+                }
+            });
+        }
+    });
 });
