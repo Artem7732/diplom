@@ -31,4 +31,28 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+    //slides
+    const swiperslide = document.querySelector('.swiper-slide'),
+        swiperslides = swiperslide.querySelectorAll('.event-carousel-item'),
+        prev = swiperslide.querySelector('.fas fa-caret-left'),
+        next = swiperslide.querySelector('.fas fa-caret-right');
+    // console.log(SwiperSlide);
+
+    let slideIndex = 0;
+
+    prev.addEventListener('click', () => showSwiperslide(-1));
+    next.addEventListener('click', () => showSwiperslide(1));
+
+    function showSwiperslide(n) {
+        slideIndex = slideIndex + n;
+        if (slideIndex < 0) {
+            slideIndex = swiperslide.length - 1;
+        }
+
+        swiperSlide.forEach(item => item.syle.display = 'none');
+        swiperSlide[slideIndex].style.display = 'block';
+
+        //console.log(slideIndex);
+
+    }
 });
