@@ -32,31 +32,57 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
     //slides
-    const swiperslide = document.querySelectorAll('.slide'),
-        prev = document.querySelector('.ec-button-prev'),
-        next = document.querySelector('.ec-button-next');
-   // console.log(swiperslide);
+//     const swiperslide = document.querySelectorAll('.slide'),
+//         prev = document.querySelector('.ec-button-prev'),
+//         next = document.querySelector('.ec-button-next');
+//    // console.log(swiperslide);
+
+//    let slideIndex =1;
+
+//     prev?.addEventListener('click', () => plusSlide(-1));
+//     next?.addEventListener('click', () => plusSlide(1));
+
+//     function showSwiperslide(n) {
+//         if(n> swiperslide.length){
+//             slideIndex =1;
+//         }
+       
+//         if (n < 1) {
+//             slideIndex = swiperslide.length;
+//         }
+
+//         swiperslide.forEach(item => item.style.display = 'none');
+//         swiperslide[slideIndex-1].style.display = 'block';
+//    }
+//    function plusSlide (n){
+//     showSwiperslide(slideIndex+=n);
+//    }
+//     //slider 
+
+const testiitem = document.querySelectorAll('.testi-item'),
+        prev = document.querySelector('.tc-button-prev'),
+        next = document.querySelector('.tc-button-next');
+    console.log(testiitem.length);
 
    let slideIndex =1;
 
     prev?.addEventListener('click', () => plusSlide(-1));
     next?.addEventListener('click', () => plusSlide(1));
 
-    function showSwiperslide(n) {
-        if(n> swiperslide.length){
+    function showtestiitem(n) {
+        if(n> testiitem.length){
             slideIndex =1;
         }
        
         if (n < 1) {
-            slideIndex = swiperslide.length;
+            slideIndex = testiitem.length;
         }
 
-        swiperslide.forEach(item => item.style.display = 'none');
-        swiperslide[slideIndex-1].style.display = 'block';
+        testiitem.forEach(item => item.style.display = 'none');
+        testiitem[slideIndex-1].style.display = 'block';
    }
    function plusSlide (n){
-    showSwiperslide(slideIndex+=n);
+    showtestiitem(slideIndex+=n);
    }
-    //slider 
-    
+   
 });
