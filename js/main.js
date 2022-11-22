@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const testiitem = document.querySelectorAll('.testi-item'),
         previtem = document.querySelector('.tc-button-prev'),
         nextitem = document.querySelector('.tc-button-next');
-    console.log(testiitem.length);
+    console.log(testiitem);
 
    let sliderIndex =1;
 
