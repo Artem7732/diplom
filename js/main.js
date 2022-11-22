@@ -60,29 +60,29 @@ window.addEventListener('DOMContentLoaded', () => {
 //     //slider 
 
 const testiitem = document.querySelectorAll('.testi-item'),
-        prev = document.querySelector('.tc-button-prev'),
-        next = document.querySelector('.tc-button-next');
+        previtem = document.querySelector('.tc-button-prev'),
+        nextitem = document.querySelector('.tc-button-next');
     console.log(testiitem.length);
 
-   let slideIndex =1;
+   let sliderIndex =1;
 
-    prev?.addEventListener('click', () => plusSlide(-1));
-    next?.addEventListener('click', () => plusSlide(1));
+    previtem?.addEventListener('click', () => plusSlider(-1));
+    nextitem?.addEventListener('click', () => plusSlider(1));
 
     function showtestiitem(n) {
         if(n> testiitem.length){
-            slideIndex =1;
+            sliderIndex =1;
         }
        
         if (n < 1) {
-            slideIndex = testiitem.length;
+            sliderIndex = testiitem.length;
         }
 
         testiitem.forEach(item => item.style.display = 'none');
-        testiitem[slideIndex-1].style.display = 'block';
+        testiitem[sliderIndex-1].style.display = 'block';
    }
-   function plusSlide (n){
-    showtestiitem(slideIndex+=n);
+   function plusSlider (n){
+    showtestiitem(sliderIndex+=n);
    }
    
 });
